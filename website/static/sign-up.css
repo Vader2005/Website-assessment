@@ -101,6 +101,48 @@ body {
     width: 100%;
 }
 
+.form-control.success input {
+    border-color: #2ecc71;
+}
+
+.form-control.error input {
+    border-color: #e74c3c;
+}
+
+.form-control.success i.fa-check {
+    color: #2ecc71;
+    visibility: visible;
+}
+
+.form-control.error i.fa-solid {
+    color: #e74c3c;
+    visibility: visible;
+}
+
+.form-control i {
+    position: absolute;
+    top: 40px;
+    right: 10px;
+    visibility: hidden;
+}
+
+.form-control small {
+    visibility: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.form-control.error small{
+    color: #e74c3c;
+    visibility: visible;
+}
+
+.form-control.success small{
+    color: #2ecc71;
+    visibility: visible;
+}
+
 .form button {
     background-color: #8e44ad;
     border: 2px solid #8e44ad;
