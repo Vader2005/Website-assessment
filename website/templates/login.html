@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/aa69230ce6.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{url_for('static', filename='login.css')}}">
     <title>Maunga Club</title>
 </head>
@@ -32,15 +33,21 @@
             <div class="container">
         
                 <form action="" class="form" id="form" method="POST">
-            
+
                     <div class="form-control">
                         <label>Email address: </label>
                         <input type="email" placeholder="Enter email" id="email" name="email">
+                        <i class="fa-solid fa-check"></i>
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                        <small>Error message</small>
                     </div>
-            
+
                     <div class="form-control">
                         <label>Password: </label>
                         <input type="password" placeholder="Enter password" id="password" name="password">
+                        <i class="fa-solid fa-check"></i>
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                        <small>Error message</small>
                     </div>
             
                     <br>
@@ -51,6 +58,8 @@
             
             </div>
         </div>
+
+    <script type="text/javascript" src="{{url_for('static', filename='login.js')}}"></script>
 
 </body>
 
