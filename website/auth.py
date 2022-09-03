@@ -22,22 +22,17 @@ def logout():
 @auth.route('/sign-up', methods=['GET', 'POST'])
 def sign_up():
     if request.method == 'POST':
-        print("THE POST REQUEST WORKS!!!!!!!!!!!!!")
-        #jsdata = request.form['data']
-        #data = json.loads(jsdata)[0]
-        #print(data)
-
-        #email = request.form.get('email')
-        #print(email)
-
+        #print("THE POST REQUEST WORKS!!!!!!!!!!!!!")
+        # Load the data from the form
         email = request.form.get('email')
-        print(email)
-
         first_name = request.form.get('firstName')
-        print(first_name)
-
         password = request.form.get('password')
-        print(password)
+
+        new_user = User(email=email, first_name=first_name, password=generate_password_hash(password, method='sha256'))
+        db.session.add(new_user)
+        db.session.commit()
+        print("Your account has been created!!!!!!!")
+        return redirect(url_for('views.home'))
 
     return render_template('sign-up.html')
 
