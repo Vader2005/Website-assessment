@@ -1,4 +1,7 @@
-from flask import Blueprint, render_template, request, flash
+from flask import Blueprint, render_template, request, flash, redirect, url_for, json
+from .models import User
+from werkzeug.security import generate_password_hash, check_password_hash # To secure password, hashing function is a one eay function, where it does not have an inverse
+from .models import db
 
 auth = Blueprint('auth', __name__)
 
@@ -18,6 +21,13 @@ def logout():
 
 @auth.route('/sign-up', methods=['GET', 'POST'])
 def sign_up():
-    return render_template('sign-up.html')
+    if request.method == 'POST':
+        print("THE POST REQUEST WORKS!!!!!!!!!!!!!")
+        jsdata = request.form['data']
+        data = json.loads(jsdata)[0]
+        print(data)
+        #email = request.form.get('email')
+        #print(email)
 
+    return render_template('sign-up.html')
 
