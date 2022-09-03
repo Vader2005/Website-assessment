@@ -23,11 +23,15 @@ def logout():
 def sign_up():
     if request.method == 'POST':
         print("THE POST REQUEST WORKS!!!!!!!!!!!!!")
-        jsdata = request.form['data']
-        data = json.loads(jsdata)[0]
-        print(data)
+        #jsdata = request.form['data']
+        #data = json.loads(jsdata)[0]
+        #print(data)
+
         #email = request.form.get('email')
         #print(email)
+
+        data = request.form.get('email')
+        print(data)
 
     return render_template('sign-up.html')
 

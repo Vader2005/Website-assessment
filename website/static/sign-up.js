@@ -76,7 +76,7 @@ function doFunction() {
         type: 'POST',
         url: '/sign-up',
         data: {
-            email: $('email').val()
+            email: email.value.trim(),
         }
     });
 }
