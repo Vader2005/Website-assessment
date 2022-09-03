@@ -30,8 +30,14 @@ def sign_up():
         #email = request.form.get('email')
         #print(email)
 
-        data = request.form.get('email')
-        print(data)
+        email = request.form.get('email')
+        print(email)
+
+        first_name = request.form.get('firstName')
+        print(first_name)
+
+        password = request.form.get('password')
+        print(password)
 
     return render_template('sign-up.html')
 

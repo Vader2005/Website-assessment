@@ -77,6 +77,8 @@ function doFunction() {
         url: '/sign-up',
         data: {
             email: email.value.trim(),
+            firstName: firstName.value.trim(),
+            password: password2.value.trim(),
         }
     });
 }
