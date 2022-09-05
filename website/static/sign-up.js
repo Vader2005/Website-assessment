@@ -9,6 +9,7 @@ form.addEventListener('submit', (e) => {
 
     checkInputs();
     doFunction();
+    location.href = '/'
 });
 
 function checkInputs() {

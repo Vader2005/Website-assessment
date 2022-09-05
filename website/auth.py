@@ -34,6 +34,6 @@ def sign_up():
         db.session.commit()
         print("Your account has been created!!!!!!!")
         return redirect(url_for('views.home'))
-
+    
     return render_template('sign-up.html')
 
