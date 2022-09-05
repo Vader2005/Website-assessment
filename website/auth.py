@@ -3,6 +3,7 @@ from .models import User
 from werkzeug.security import generate_password_hash, check_password_hash # To secure password, hashing function is a one eay function, where it does not have an inverse
 from .models import db
 import sys
+from flask_login import login_user, login_required, logout_user, current_user
 
 auth = Blueprint('auth', __name__)
 
@@ -18,6 +19,7 @@ def login():
         if user:
             if check_password_hash(user.password, password):
                 print("Login successful!!!!!!!!!!!!!!!!!!!!")
+                login_user(user, remember=True) # Basically logs in the user and stores in the flask session
                 return redirect(url_for('views.home'))
             else:
                 print("Incorrect password, try again!!!!!!!")
@@ -29,8 +31,10 @@ def login():
 # Create the logout url
 
 @auth.route('/logout')
+@login_required # Makes sure we can't access the page or route unless the user is logged in
 def logout():
-    return "<p> Logout </p>"
+    logout_user()
+    return redirect(url_for('auth.login'))
 
 # Create the sign-up url
 
@@ -43,9 +47,12 @@ def sign_up():
         first_name = request.form.get('firstName')
         password = request.form.get('password')
 
+        user = User.query.filter_by(email=email).first()
+
         new_user = User(email=email, first_name=first_name, password=generate_password_hash(password, method='sha256'))
         db.session.add(new_user)
         db.session.commit()
+        login_user(user, remember=True) 
         print("Your account has been created!!!!!!!")
         return redirect(url_for('views.home'))
     

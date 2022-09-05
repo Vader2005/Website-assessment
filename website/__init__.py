@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from os import path
+from flask_login import LoginManager
 
 # Initialize the database
 db = SQLAlchemy()
@@ -12,7 +13,7 @@ def create_app():
     app = Flask(__name__)
     app.config['SECRET KEY'] = 'edjhdefehfej'
     app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}' # Telling flask where the database is stores
-    #app.secret_key = 'edjhdefehfej'
+    app.secret_key = 'edjhdefehfej'
     db.init_app(app) # Initialize the databse
 
     # registering the views from views.py and auth.py
@@ -26,6 +27,14 @@ def create_app():
     from .models import User # Making sure we load the database file
 
     create_database(app)
+
+    login_manager = LoginManager()
+    login_manager.login_view = 'auth.login' # We do we want to go if the user is not logged in
+    login_manager.init_app(app)
+
+    @login_manager.user_loader
+    def load_user(id):
+        return User.query.get(int(id)) # Basically telling flask how to load a user
 
     return app
 
