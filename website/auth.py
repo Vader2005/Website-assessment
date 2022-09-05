@@ -10,6 +10,20 @@ auth = Blueprint('auth', __name__)
 
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
+    email = request.form.get('email')
+    password = request.form.get('password')
+
+    if request.method == 'POST':
+        user = User.query.filter_by(email=email).first()
+        if user:
+            if check_password_hash(user.password, password):
+                print("Login successful!!!!!!!!!!!!!!!!!!!!")
+                return redirect(url_for('views.home'))
+            else:
+                print("Incorrect password, try again!!!!!!!")
+        else:
+            print("User does not exist!!!!!!!!!!!")
+
     return render_template('login.html')
 
 # Create the logout url

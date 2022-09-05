@@ -12,6 +12,7 @@ def create_app():
     app = Flask(__name__)
     app.config['SECRET KEY'] = 'edjhdefehfej'
     app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}' # Telling flask where the database is stores
+    #app.secret_key = 'edjhdefehfej'
     db.init_app(app) # Initialize the databse
 
     # registering the views from views.py and auth.py
