@@ -4,11 +4,60 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"/>
+    <script
+    src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='Chalets.css')}}">
     <title>Maunga Club Chalets</title>
 </head>
 
 <body>
-    <h1>Hello There</h1>
+
+    <!-- The navbar and wensite of the website-->
+    <div>
+        <nav class="navbar">
+            <img id="logo" src="{{url_for('static', filename='Logo2.png')}}">
+            <ul>
+                <li><a href="/logout">Logout</a></li>
+                <li><a href="/sign-up">Sign-up</a></li>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/About">About</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Building the Pukeko chalet-->
+
+    <div>
+        <h1 id="Pukeko">Pukeko Chalet</h1>
+
+        <img id="image1" src="{{url_for('static', filename='Pukeko_chalet_exterior.jpg')}}">
+
+        <p id="Info">
+            Chalet Number: 1
+            <br>
+            Chalet name: Kākāpo
+            <br>
+            Maximum adults: 10
+            <br>
+            Maximum children: 30
+            <br>
+            Largest of the chalets
+            <br>
+            Large Kitchen, dining and living area
+            Great amenities
+        </p>
+
+        <a id="pic1" data-fancybox="gallery" href="{{url_for('static', filename='Pukeko_adult_bedroom.jpg')}}"> <img src="{{url_for('static', filename='Pukeko_adult_bedroom_thumb.jpg')}}"></a>
+        <a id="pic2" data-fancybox="gallery" href="{{url_for('static', filename='Pukeko_bathroom.jpg')}}"> <img src="{{url_for('static', filename='Pukeko_bathroom_thumb.jpg')}}"></a>
+        <a id="pic3" data-fancybox="gallery" href="{{url_for('static', filename='Pukeko_chalet_exterior.jpg')}}"> <img src="{{url_for('static', filename='Pukeko_chalet_exterior_thumb.jpg')}}"></a>
+        <a id="pic4" data-fancybox="gallery" href="{{url_for('static', filename='Pukeko_chalet_view.jpg')}}"> <img src="{{url_for('static', filename='Pukeko_chalet_view_thumb.jpg')}}"></a>
+    </div>
+    
+
 </body>
 
 </html>
