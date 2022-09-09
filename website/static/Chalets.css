@@ -80,3 +80,81 @@ body {
     top: 625px;
     left: 1300px;
 }
+
+#Kakapo {
+    text-align: center;
+    padding-top: 40px;
+}
+
+#image2 {
+    width: 1100px;
+    height: 900px;
+}
+
+#Info2 {
+    position: absolute;
+    top: 1200px;
+    left: 1110px;
+    font-size: 25px;
+}
+
+#pic5 {
+    position: absolute;
+    top: 1625px;
+}
+
+#pic6 {
+    position: absolute;
+    top: 1625px;
+    left: 1300px;
+}
+
+#pic7 {
+    position: absolute;
+    top: 1758px;
+}
+
+#pic8 {
+    position: absolute;
+    top: 1758px;
+    left: 1300px;
+}
+
+#Kereru {
+    text-align: center;
+    padding-top: 40px;
+}
+
+#image3 {
+    width: 1100px;
+    height: 900px;
+}
+
+#Info3 {
+    position: absolute;
+    top: 2220px;
+    left: 1110px;
+    font-size: 25px;
+}
+
+#pic9 {
+    position: absolute;
+    top: 2700px;
+}
+
+#pic10 {
+    position: absolute;
+    top: 2700px;
+    left: 1300px;
+}
+
+#pic11 {
+    position: absolute;
+    top: 2833px;
+}
+
+#pic12 {
+    position: absolute;
+    top: 2833px;
+    left: 1300px;
+}
