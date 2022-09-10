@@ -4,11 +4,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='About.css')}}">
     <title>Maunga Club Chalets</title>
 </head>
 
 <body>
-    <h1>Hello There</h1>
+
+    <!-- The navbar and wensite of the website-->
+    <div>
+        <nav class="navbar">
+            <img id="logo" src="{{url_for('static', filename='Logo2.png')}}">
+            <ul>
+                <li><a href="/logout">Logout</a></li>
+                <li><a href="/sign-up">Sign-up</a></li>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/Chalets">Chalets</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Add a background image -->
+
+    <div>
+        <img id="background" src="{{url_for('static', filename='mountain_view_1.jpg')}}">
+
+        <h1 id="Heading">About Maunga Club!!!!</h1>
+
+        <p id="paragraph">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            <br>
+            Veniam minus sint consectetur tempora deserunt! Cumque quidem autem non.
+            <br>
+            .eligendi beatae esse repudiandae ut, dolorum ipsam nobis debitis ab vel recusandae?
+        </p>
+    </div>
+
+    <footer id="footer">
+        <p><small>&copy; Maunga Chalets 2019 - Website by Meical Lee Pinghu</small></p>
+    </footer>
+
 </body>
 
 </html>
