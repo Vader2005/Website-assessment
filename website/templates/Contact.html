@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='Contact.css')}}">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&family=Source+Sans+Pro:wght@600&display=swap" rel="stylesheet">
+    <title>Maunga Club contact</title>
+</head>
+
+<body>
+
+    <!-- The navbar and wensite of the website-->
+    <div>
+        <nav class="navbar">
+            <img id="logo" src="{{url_for('static', filename='Logo2.png')}}">
+            <ul>
+                <li><a href="/logout">Logout</a></li>
+                <li><a href="/sign-up">Sign-up</a></li>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/Chalets">Chalets</a></li>
+                <li><a href="/About">About</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="Container">
+        <div class="Contact-box">
+            <div class="Left"></div>
+            <div class="Right">
+                <h2>Contact us</h2>
+                <input type="text" class="field" placeholder="Your name">
+                <input type="email" class="field" placeholder="Your email">
+                <input type="text" class="field" placeholder="Your Phone">
+                <textarea class="field area" placeholder="Message"></textarea>
+                <button class="btn">Send</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

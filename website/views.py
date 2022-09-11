@@ -21,3 +21,8 @@ def Chalets():
 def About():
     return render_template('About.html')
 
+@views.route('/Contact')
+@login_required
+def Contact():
+    return render_template('Contact.html')
+
